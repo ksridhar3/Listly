@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         myListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-//                items.remove(position);
                 mDB.deleteItem(id);
                 cursorAdapter.swapCursor(mDB.getAllListItems());
                 cursorAdapter.notifyDataSetChanged();
